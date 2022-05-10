@@ -1,0 +1,35 @@
+<section class="p-8">
+  <h2 class="text-red-700 text-4xl mb-8">Phones catalog</h2>
+
+
+  <div class="catalog">
+    <div
+      *ngFor="let phone of phones"
+      class="catalog-item shadow-lg"
+    >
+      <img class="mb-8 catalog-img" [src]="phone.imageUrl | img" alt="Image">
+
+      <div>
+        <h3 class="text-2xl text-red-700 mb-4">{{phone.name}}</h3>
+
+        <p class="text-base">{{phone.snippet}}</p>
+
+        <div class="catalog-actions">
+          <a
+            class="catalog-link bg-indigo-500 shadow-lg shadow-indigo-500/50"
+            [routerLink]="phone.id"
+          >
+            Details
+          </a>
+
+          <a
+            class="catalog-link bg-cyan-500 shadow-lg shadow-cyan-500/50"
+            href="#"
+          >
+            Add to cart
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

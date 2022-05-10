@@ -1,0 +1,27 @@
+<section class="p-8">
+  <ng-container *ngIf="phone; else loader">
+    <h2 class="text-red-700 text-4xl mb-8">{{phone.name}}</h2>
+
+    <p>{{phone.description}}</p>
+
+    <div class="img-container">
+      <div class="slide-img">
+        <img class="img-container-img" [src]="selectedImg | img" alt="Image">
+      </div>
+
+      <ul class="img-list">
+        <li
+          class="img-item"
+          *ngFor="let image of phone.images"
+          (click)="selectedImg = image"
+        >
+          <img class="img-container-img" [src]="image | img" alt="Phone images">
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</section>
+
+<ng-template #loader>
+  <p>Loading...</p>
+</ng-template>

@@ -1,0 +1,22 @@
+<header class="bg-violet-400 header">
+  <nav class="flex flex-row">
+    <a
+      class="p-3 font-bold mr-2 nav-link"
+      routerLink="/"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact: true}"
+    >
+      Home
+    </a>
+
+    <a
+      class="p-3 font-bold nav-link"
+      routerLink="/phones"
+      routerLinkActive="active-link"
+    >
+      Catalog
+    </a>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
